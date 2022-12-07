@@ -18,10 +18,11 @@ def resultexec(cursor,type):
 		myresult = cursor.fetchall()
 	for x in myresult:
 	  print(x)
+	return myresult
 
 def showTable():
 	mycursor.execute("show tables")
-	resultexec(mycursor,2)
+	return resultexec(mycursor,2)
 	
 
 def select(column,table,where):
@@ -49,7 +50,3 @@ def delete(column,table,where):
 	mycursor.execute(sql)
 	mydb.commit()	
 	print(mycursor.rowcount, "record(s) affected.")
-
-
-
-showTable()
